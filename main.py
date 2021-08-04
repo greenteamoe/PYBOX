@@ -17,6 +17,9 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        # APPLICATION TITLE
+        self.setWindowTitle("PYBOX")
+
         # CALLING MINIMUM AND INITIAL RESOLUTION METHOD
         self.ui = UI_MainWindow()
         self.ui.setup_ui(self)
