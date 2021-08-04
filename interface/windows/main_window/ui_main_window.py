@@ -5,6 +5,10 @@ __description__ = "Project made with Qt Designer and PySide6"
 # IMPORT QTCORE
 from qt_core import *
 
+# IMPORT PAGES
+
+from interface.pages.ui_pages import Ui_application_pages
+
 # MAIN WINDOW
 class UI_MainWindow(object):
     def setup_ui(self, parent):
@@ -64,12 +68,27 @@ class UI_MainWindow(object):
         # Application pages
         self.pages = QStackedWidget()
         self.pages.setStyleSheet("font-size: 12pt; color: white")
+        self.ui_pages = Ui_application_pages()
+        self.ui_pages.setupUi(self.pages)
 
         # BOTTOM BAR
         self.bottom_bar = QFrame()
         self.bottom_bar.setMaximumHeight(30)
         self.bottom_bar.setMinimumHeight(30)
         self.bottom_bar.setStyleSheet("background-color: #1b1e24; color: #393e47")
+
+        self.bottom_bar_layout = QHBoxLayout(self.bottom_bar)
+        self.bottom_bar_layout.setContentsMargins(10,0,10,0)
+
+        # Bottom Label
+        self.bottom_label_left = QLabel("Made with ♥ by @greenteamoe")
+
+        # Bottom Spacer
+        self.bottom_spacer = QSpacerItem(20,20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        # Add to layout
+        self.bottom_bar_layout.addWidget(self.bottom_label_left)
+        self.bottom_bar_layout.addItem(self.bottom_spacer)
 
         # Add to content layout
         self.content_layout.addWidget(self.top_bar)
