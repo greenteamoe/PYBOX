@@ -7,18 +7,21 @@ import sys
 import os
 
 # IMPORT QTCORE
-
 from qt_core import *
 
 # IMPORT MAIN WINDOW
-from ui_main_window import *
-
+from interface.windows.main_window.ui_main_window import *
 
 # MAIN WINDOW
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        # CALLING MINIMUM AND INITIAL RESOLUTION METHOD
+        self.ui = UI_MainWindow()
+        self.ui.setup_ui(self)
+
+        # SHOWING THE SCREEN
         self.show()
 
 
