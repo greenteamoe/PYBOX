@@ -53,9 +53,16 @@ class UI_MainWindow(object):
         self.left_menu_top_layout.setSpacing(0)
 
         # TOP BUTTONS
-        self.toggle_button = PyPushButton("Toggle")
-        self.btn_1 = PyPushButton("1")
-        self.btn_2 = PyPushButton("2")
+        self.toggle_button = PyPushButton(
+            text = "Hide menu", 
+        )
+        self.btn_1 = PyPushButton(
+            text = "Home page", 
+            is_active = True, 
+        )
+        self.btn_2 = PyPushButton(
+            text = "Second page", 
+        )
 
         # ADD TOP BUTTONS TO LAYOUT
         self.left_menu_top_layout.addWidget(self.toggle_button)
@@ -77,7 +84,9 @@ class UI_MainWindow(object):
         self.left_menu_bottom_layout.setSpacing(0)
 
         # ADD BOTTOM BUTTONS
-        self.settings_btn = QPushButton("Settings")
+        self.settings_btn = PyPushButton(
+            text = "Config", 
+        )
 
         # ADD BOTTOM BUTTONS TO LAYOUT
         self.left_menu_bottom_layout.addWidget(self.settings_btn)
