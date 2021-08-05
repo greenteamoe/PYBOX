@@ -35,11 +35,11 @@ class MainWindow(QMainWindow):
         menu_width = self.ui.left_menu.width()
 
         # Check menu width
-        width = 50
+        width = 70
 
         # If current menu width is less than 50px, set menu width to 240px
         if menu_width == 70:
-            width = 240
+            width = 220
 
         # Start left menu animation
         self.animation = QPropertyAnimation(self.ui.left_menu, b"minimumWidth")
@@ -49,6 +49,9 @@ class MainWindow(QMainWindow):
         # Setting animation speed in ms
         self.animation.setDuration(400)
         
+        # Setting animation type
+        self.animation.setEasingCurve(QEasingCurve.OutCirc)
+
         # Starting animation
         self.animation.start()
 
