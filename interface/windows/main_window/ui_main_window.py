@@ -42,15 +42,43 @@ class UI_MainWindow(object):
         # TOP FRAME MENU
         self.left_menu_top_frame = QFrame()
         self.left_menu_top_frame.setMinimumHeight(50)
-        self.left_menu_top_frame.setStyleSheet("background-color: red")
+        self.left_menu_top_frame.setObjectName("left_menu_top_frame")
+        self.left_menu_top_frame.setStyleSheet("#left_menu_top_frame { background-color: red; }")
+
+        # TOP FRAME LAYOUT
+        self.left_menu_top_layout = QVBoxLayout(self.left_menu_top_frame)
+        self.left_menu_top_layout.setContentsMargins(0, 0, 0, 0)
+        self.left_menu_top_layout.setSpacing(0)
+
+        # TOP BUTTONS
+        self.toggle_button = QPushButton("Toggle")
+        self.btn_1 = QPushButton("1")
+        self.btn_2 = QPushButton("2")
+
+        # ADD TOP BUTTONS TO LAYOUT
+        self.left_menu_top_layout.addWidget(self.toggle_button)
+        self.left_menu_top_layout.addWidget(self.btn_1)
+        self.left_menu_top_layout.addWidget(self.btn_2)
 
         # MENU SPACER
         self.left_menu_spacer = QSpacerItem(20,20, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        # TOP FRAME MENU = BOTTOM FRAME MENU
+        # BOTTOM FRAME MENU
         self.left_menu_bottom_frame = QFrame()
         self.left_menu_bottom_frame.setMinimumHeight(50)
-        self.left_menu_bottom_frame.setStyleSheet("background-color: red")
+        self.left_menu_bottom_frame.setObjectName("left_menu_bottom_frame")
+        self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame { background-color: red; }")
+
+        # BOTTOM FRAME LAYOUT
+        self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
+        self.left_menu_bottom_layout.setContentsMargins(0, 0, 0, 0)
+        self.left_menu_bottom_layout.setSpacing(0)
+
+        # ADD BOTTOM BUTTONS
+        self.settings_btn = QPushButton("Settings")
+
+        # ADD BOTTOM BUTTONS TO LAYOUT
+        self.left_menu_bottom_layout.addWidget(self.settings_btn)
 
         # LABEL VERSION SAMPLE
         self.left_menu_label_version = QLabel("v1.0.0")
