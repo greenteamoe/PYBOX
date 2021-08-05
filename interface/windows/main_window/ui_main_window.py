@@ -7,8 +7,10 @@ from PyQt5 import QtCore
 from qt_core import *
 
 # IMPORT PAGES
-
 from interface.pages.ui_pages import Ui_application_pages
+
+# IMPORT CUSTOM WIDGETS
+from interface.widgets.push_button import PyPushButton
 
 # MAIN WINDOW
 class UI_MainWindow(object):
@@ -51,9 +53,9 @@ class UI_MainWindow(object):
         self.left_menu_top_layout.setSpacing(0)
 
         # TOP BUTTONS
-        self.toggle_button = QPushButton("Toggle")
-        self.btn_1 = QPushButton("1")
-        self.btn_2 = QPushButton("2")
+        self.toggle_button = PyPushButton("Toggle")
+        self.btn_1 = PyPushButton("1")
+        self.btn_2 = PyPushButton("2")
 
         # ADD TOP BUTTONS TO LAYOUT
         self.left_menu_top_layout.addWidget(self.toggle_button)
