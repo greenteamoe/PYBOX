@@ -13,13 +13,13 @@ class PyPushButton(QPushButton):
         self,
         text = "",
         height = 40,
-        minimum_width = 70,
-        text_padding = 75,
+        minimum_width = 65,
+        text_padding = 72,
         text_color = "#9da5b3",
         icon_path = "",
-        icon_color = "#a1a1a1",
+        icon_color = "#D1D5DA",
         btn_color = "#14151E",
-        btn_hover = "#434c5e",
+        btn_hover = "#1b1d29",
         #btn_pressed = "#1b1e24",
         is_active = False
     ):
@@ -56,8 +56,8 @@ class PyPushButton(QPushButton):
         self,
         text_padding = 75,
         text_color = "#9da5b3",
-        btn_color = "#14151E", # -> 14151E next color
-        btn_hover = "#6c738c",
+        btn_color = "#14151E",
+        btn_hover = "#1b1d29",
         #btn_pressed = "#1b1e24",
         is_active = False
     ):

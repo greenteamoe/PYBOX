@@ -33,8 +33,8 @@ class UI_MainWindow(object):
         # LEFT MENU
         self.left_menu = QFrame()
         self.left_menu.setStyleSheet("background-color: #14151E")
-        self.left_menu.setMaximumWidth(70)
-        self.left_menu.setMinimumWidth(70)
+        self.left_menu.setMaximumWidth(65)
+        self.left_menu.setMinimumWidth(65)
 
         # LEFT MENU LAYOUT
         self.left_menu_layout = QVBoxLayout(self.left_menu)
@@ -43,7 +43,7 @@ class UI_MainWindow(object):
 
         # TOP FRAME MENU
         self.left_menu_top_frame = QFrame()
-        self.left_menu_top_frame.setMinimumHeight(50)
+        self.left_menu_top_frame.setMinimumHeight(40)
         self.left_menu_top_frame.setObjectName("left_menu_top_frame")
         self.left_menu_top_frame.setStyleSheet("#left_menu_top_frame { background-color: red; }")
 
@@ -57,12 +57,14 @@ class UI_MainWindow(object):
             text = "Hide menu", 
             icon_path = "icon_hamburger.svg"
         )
+
         self.btn_1 = PyPushButton(
             text = "Home page", 
             is_active = True, 
             icon_path = "icon_home.svg"
 
         )
+
         self.btn_2 = PyPushButton(
             text = "Widgets", 
             icon_path = "icon_widgets.svg"
@@ -78,9 +80,8 @@ class UI_MainWindow(object):
 
         # BOTTOM FRAME MENU
         self.left_menu_bottom_frame = QFrame()
-        self.left_menu_bottom_frame.setMinimumHeight(50)
+        self.left_menu_bottom_frame.setMinimumHeight(40)
         self.left_menu_bottom_frame.setObjectName("left_menu_bottom_frame")
-        self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame { background-color: red; }")
 
         # BOTTOM FRAME LAYOUT
         self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
@@ -89,7 +90,7 @@ class UI_MainWindow(object):
 
         # ADD BOTTOM BUTTONS
         self.settings_btn = PyPushButton(
-            text = "Config", 
+            text = "Settings", 
             icon_path = "icon_settings.svg"
 
         )
