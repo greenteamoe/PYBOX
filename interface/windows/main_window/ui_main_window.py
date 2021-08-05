@@ -50,7 +50,7 @@ class UI_MainWindow(object):
         # TOP FRAME MENU = BOTTOM FRAME MENU
         self.left_menu_bottom_frame = QFrame()
         self.left_menu_bottom_frame.setMaximumHeight(50)
-        self.left_menu_bottom_frame.setStyleSheet("background-color: red")
+        self.left_menu_bottom_frame.setStyleSheet("background-color: blue")
 
         # LABEL VERSION SAMPLE
         self.left_menu_label_version = QLabel("v1.0.0")
