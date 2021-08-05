@@ -32,7 +32,7 @@ class UI_MainWindow(object):
 
         # LEFT MENU
         self.left_menu = QFrame()
-        self.left_menu.setStyleSheet("background-color: #3e4552")
+        self.left_menu.setStyleSheet("background-color: #14151E")
         self.left_menu.setMaximumWidth(70)
         self.left_menu.setMinimumWidth(70)
 
@@ -55,13 +55,17 @@ class UI_MainWindow(object):
         # TOP BUTTONS
         self.toggle_button = PyPushButton(
             text = "Hide menu", 
+            icon_path = "icon_hamburger.svg"
         )
         self.btn_1 = PyPushButton(
             text = "Home page", 
             is_active = True, 
+            icon_path = "icon_home.svg"
+
         )
         self.btn_2 = PyPushButton(
-            text = "Second page", 
+            text = "Widgets", 
+            icon_path = "icon_widgets.svg"
         )
 
         # ADD TOP BUTTONS TO LAYOUT
@@ -86,6 +90,8 @@ class UI_MainWindow(object):
         # ADD BOTTOM BUTTONS
         self.settings_btn = PyPushButton(
             text = "Config", 
+            icon_path = "icon_settings.svg"
+
         )
 
         # ADD BOTTOM BUTTONS TO LAYOUT
@@ -96,7 +102,7 @@ class UI_MainWindow(object):
         self.left_menu_label_version.setAlignment(Qt.AlignCenter)
         self.left_menu_label_version.setMinimumHeight(30)
         self.left_menu_label_version.setMaximumHeight(30)
-        self.left_menu_label_version.setStyleSheet("color: #9ca6b8")
+        self.left_menu_label_version.setStyleSheet("color: #a1a1a1")
 
         # ADD TO LAYOUT
         self.left_menu_layout.addWidget(self.left_menu_top_frame)
@@ -106,7 +112,7 @@ class UI_MainWindow(object):
 
         # CONTENT
         self.content = QFrame()
-        self.content.setStyleSheet("background-color: #282c34")
+        self.content.setStyleSheet("background-color: #28293A")
 
         # Content Layout
         self.content_layout = QVBoxLayout(self.content)
@@ -117,7 +123,7 @@ class UI_MainWindow(object):
         self.top_bar = QFrame()
         self.top_bar.setMaximumHeight(30)
         self.top_bar.setMinimumHeight(30)
-        self.top_bar.setStyleSheet("background-color: #1b1e24; color: #9ca6b8")
+        self.top_bar.setStyleSheet("background-color: #1b1e24; color: #a1a1a1")
         self.top_bar_layout = QHBoxLayout(self.top_bar)
         self.top_bar_layout.setContentsMargins(10,0,10,0)
 
@@ -146,7 +152,7 @@ class UI_MainWindow(object):
         self.bottom_bar = QFrame()
         self.bottom_bar.setMaximumHeight(30)
         self.bottom_bar.setMinimumHeight(30)
-        self.bottom_bar.setStyleSheet("background-color: #1b1e24; color: #393e47")
+        self.bottom_bar.setStyleSheet("background-color: #1b1e24; color: #a1a1a1")
 
         self.bottom_bar_layout = QHBoxLayout(self.bottom_bar)
         self.bottom_bar_layout.setContentsMargins(10,0,10,0)

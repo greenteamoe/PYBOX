@@ -17,8 +17,8 @@ class PyPushButton(QPushButton):
         text_padding = 75,
         text_color = "#9da5b3",
         icon_path = "",
-        icon_color = "#3e4552",
-        btn_color = "#3e4552",
+        icon_color = "#a1a1a1",
+        btn_color = "#14151E",
         btn_hover = "#434c5e",
         #btn_pressed = "#1b1e24",
         is_active = False
@@ -56,7 +56,7 @@ class PyPushButton(QPushButton):
         self,
         text_padding = 75,
         text_color = "#9da5b3",
-        btn_color = "#3e4552",
+        btn_color = "#14151E", # -> 14151E next color
         btn_hover = "#6c738c",
         #btn_pressed = "#1b1e24",
         is_active = False
@@ -81,10 +81,48 @@ class PyPushButton(QPushButton):
         active_style = f"""
         QPushButton {{
             background-color: {btn_hover};
-            border-right: 5px solid #1b1e24;
+            border-right: 5px solid #597996;
         }}
         """
         if not is_active:
             self.setStyleSheet(style)
         else:
             self.setStyleSheet(style + active_style)
+
+    def paintEvent(self,event):
+        # Returning default style
+        QPushButton.paintEvent(self, event)
+
+        # Set QPainter
+        qp = QPainter()
+        qp.begin(self)
+        qp.setRenderHint(QPainter.Antialiasing)
+        qp.setPen(Qt.NoPen)
+
+        rect = QRect(0,0, self.minimum_width, self.height())
+
+        # CALLING PAINT EVENT
+        self.draw_icon(qp, self.icon_path, rect, self.icon_color)
+
+        qp.end()
+
+    def draw_icon(self, qp, image, rect, color):
+
+        # Format path
+        app_path = os.path.abspath(os.getcwd())
+        folder = "interface/images/icons"
+        path = os.path.join(app_path, folder)
+        icon_path = os.path.normpath(os.path.join(path, image))
+
+        # Draw icons
+        icon = QPixmap(icon_path)
+        painter = QPainter(icon)
+        painter.setCompositionMode(QPainter.CompositionMode_SourceIn)
+        painter.fillRect(icon.rect(), color)
+        qp.drawPixmap(
+            (rect.width() - icon.width()) / 2,
+            (rect.height() - icon.height()) / 2,
+            icon
+
+        )
+        painter.end()
