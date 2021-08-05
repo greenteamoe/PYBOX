@@ -41,7 +41,7 @@ class UI_MainWindow(object):
 
         # TOP FRAME MENU
         self.left_menu_top_frame = QFrame()
-        self.left_menu_top_frame.setMaximumHeight(50)
+        self.left_menu_top_frame.setMinimumHeight(50)
         self.left_menu_top_frame.setStyleSheet("background-color: red")
 
         # MENU SPACER
@@ -49,14 +49,15 @@ class UI_MainWindow(object):
 
         # TOP FRAME MENU = BOTTOM FRAME MENU
         self.left_menu_bottom_frame = QFrame()
-        self.left_menu_bottom_frame.setMaximumHeight(50)
-        self.left_menu_bottom_frame.setStyleSheet("background-color: blue")
+        self.left_menu_bottom_frame.setMinimumHeight(50)
+        self.left_menu_bottom_frame.setStyleSheet("background-color: red")
 
         # LABEL VERSION SAMPLE
         self.left_menu_label_version = QLabel("v1.0.0")
         self.left_menu_label_version.setAlignment(Qt.AlignCenter)
         self.left_menu_label_version.setMinimumHeight(30)
         self.left_menu_label_version.setMaximumHeight(30)
+        self.left_menu_label_version.setStyleSheet("color: #9ca6b8")
 
         # ADD TO LAYOUT
         self.left_menu_layout.addWidget(self.left_menu_top_frame)
