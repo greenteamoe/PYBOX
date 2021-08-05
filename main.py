@@ -20,13 +20,37 @@ class MainWindow(QMainWindow):
         # APPLICATION TITLE
         self.setWindowTitle("PYBOX")
 
-        # CALLING MINIMUM AND INITIAL RESOLUTION METHOD
+        # SETUP MAIN WINDOWN AND CALLING MINIMUM AND INITIAL RESOLUTION METHOD
         self.ui = UI_MainWindow()
         self.ui.setup_ui(self)
 
-        # SHOWING THE SCREEN
+        # Toggle button
+        self.ui.toggle_button.clicked.connect(self.toggle_button)
+
+        # SHOWING THE WINDOW
         self.show()
 
+    def toggle_button(self):
+        # Get menu width
+        menu_width = self.ui.left_menu.width()
+
+        # Check menu width
+        width = 50
+
+        # If current menu width is less than 50px, set menu width to 240px
+        if menu_width == 70:
+            width = 240
+
+        # Start left menu animation
+        self.animation = QPropertyAnimation(self.ui.left_menu, b"minimumWidth")
+        self.animation.setStartValue(menu_width)
+        self.animation.setEndValue(width)
+
+        # Setting animation speed in ms
+        self.animation.setDuration(400)
+        
+        # Starting animation
+        self.animation.start()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
