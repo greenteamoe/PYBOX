@@ -62,7 +62,6 @@ class UI_MainWindow(object):
             text = "Home page", 
             is_active = True, 
             icon_path = "icon_home.svg"
-
         )
 
         self.btn_2 = PyPushButton(
@@ -101,6 +100,7 @@ class UI_MainWindow(object):
         # LABEL VERSION SAMPLE
         self.left_menu_label_version = QLabel("v1.0.0")
         self.left_menu_label_version.setAlignment(Qt.AlignCenter)
+        self.left_menu_label_version.setMaximumWidth(60)
         self.left_menu_label_version.setMinimumHeight(30)
         self.left_menu_label_version.setMaximumHeight(30)
         self.left_menu_label_version.setStyleSheet("color: #a1a1a1")
@@ -135,7 +135,7 @@ class UI_MainWindow(object):
         self.top_spacer = QSpacerItem(20,20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         # Right Label
-        self.top_label_right = QLabel("| Front Page")
+        self.top_label_right = QLabel("| Home page")
         self.top_label_right.setStyleSheet("font: 700 9pt 'Segoe UI")
 
         # Add to layout
