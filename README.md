@@ -1,7 +1,7 @@
 # PYBOX
 ``PYBOX`` is a toolbox made in Python using PySide6 and PyQt franeworks, supporting PySide2.
 ## Containing different types of widgets, still work-in-progress
-![](/github/pybox_sample_opened.png)
+![](/github/pybox_sample_closed.png)
 
 ### Requirements:
 ![](/github/requirements_lib.png)
