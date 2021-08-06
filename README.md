@@ -4,7 +4,7 @@
 ![](/github/pybox_sample_closed.png)
 
 ### Requirements:
-![](/github/requirement.png)
+![](/github/requirements.png)
 
 ## Authors
 
