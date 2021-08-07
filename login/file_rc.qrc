@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="close_image">
+    <file>images/cil-x.png</file>
+  </qresource>
+  <qresource prefix="person_image">
+    <file>images/person.svg</file>
+  </qresource>
+  <qresource prefix="logo">
+    <file>images/logo.png</file>
+  </qresource>
+  <qresource prefix="lock_image">
+    <file>images/locksvgicon.svg</file>
+    <file>images/locksvg.svg</file>
+  </qresource>
+</RCC>
