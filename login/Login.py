@@ -10,12 +10,11 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_LoginWIndow(object):
 
         # Style functions
 
-        stylePopupOk = ("background-color:rgb(154, 195, 105); border-radius: 5px;")
+        stylePopupOk = ("background-color:rgb(100, 156, 83); border-radius: 5px;")
         stylePopupError = ("background-color:rgb(254, 104, 128); border-radius: 5px;")
 
         styleLineEditOK = ("QLabel{\n"
@@ -85,28 +84,29 @@ class Ui_LoginWIndow(object):
                 self.top.setFrameShadow(QtWidgets.QFrame.Raised)
                 self.top.setObjectName("top")
                 self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.top)
-                self.horizontalLayout_2.setContentsMargins(0, 2, 0, 0)
+                self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
                 self.horizontalLayout_2.setSpacing(0)
                 self.horizontalLayout_2.setObjectName("horizontalLayout_2")
                 self.frame_error_popup = QtWidgets.QFrame(self.top)
-                self.frame_error_popup.setMaximumSize(QtCore.QSize(450, 16777215))
+                self.frame_error_popup.setMaximumSize(QtCore.QSize(550, 16777215))
                 self.frame_error_popup.setStyleSheet(self.stylePopupOk)
                 self.frame_error_popup.setFrameShape(QtWidgets.QFrame.StyledPanel)
                 self.frame_error_popup.setFrameShadow(QtWidgets.QFrame.Raised)
                 self.frame_error_popup.setObjectName("frame_error_popup")
                 self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_error_popup)
-                self.horizontalLayout_3.setContentsMargins(25, 0, 10, 0)
+                self.horizontalLayout_3.setContentsMargins(45, 0, 10, 0)
                 self.horizontalLayout_3.setSpacing(0)
                 self.horizontalLayout_3.setObjectName("horizontalLayout_3")
                 self.label_error = QtWidgets.QLabel(self.frame_error_popup)
                 self.label_error.setAlignment(QtCore.Qt.AlignCenter)
+                self.label_error.setStyleSheet("color: white;")
                 self.label_error.setObjectName("label_error")
                 self.horizontalLayout_3.addWidget(self.label_error)
                 self.close_popup = QtWidgets.QPushButton(self.frame_error_popup)
                 self.close_popup.setEnabled(True)
                 self.close_popup.setMaximumSize(QtCore.QSize(20, 20))
                 self.close_popup.setStyleSheet("QPushButton {\n"
-                "    border-radius: 4px;\n"
+                "    \n"
                 "    background-image: url(:/close_image/images/cil-x.png);\n"
                 "    background-position: center;\n"
                 "}\n"
