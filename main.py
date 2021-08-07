@@ -27,8 +27,44 @@ class MainWindow(QMainWindow):
         # Toggle button
         self.ui.toggle_button.clicked.connect(self.toggle_button)
 
+        # Home btn function event
+        self.ui.home_btn.clicked.connect(self.show_page_1)
+
+        # Widget btn function event
+        self.ui.widget_btn.clicked.connect(self.show_page_2)
+
+        # Settings btn function event
+        self.ui.settings_btn.clicked.connect(self.show_page_3)
+
         # SHOWING THE WINDOW
         self.show()
+
+    # Function to reset the selection style of the button by finding related parents/children
+    def reset_selection(self):
+        for btn in self.ui.left_menu.findChildren(QPushButton):
+            try:
+                btn.set_active(False)
+            except:
+                pass
+
+    # Show page function
+    def show_page_1(self):
+        print("Home page selected")
+        self.reset_selection()
+        self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_1)
+        self.ui.home_btn.set_active(True)
+
+    def show_page_2(self):
+        print("Widget page selected")
+        self.reset_selection()
+        self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_2)
+        self.ui.widget_btn.set_active(True)
+
+    def show_page_3(self):
+        print("Settings page selected")
+        self.reset_selection()
+        self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_3)
+        self.ui.settings_btn.set_active(True)
 
     def toggle_button(self):
         # Get menu width

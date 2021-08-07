@@ -52,6 +52,17 @@ class PyPushButton(QPushButton):
             is_active = self.is_active,
         )
 
+    # Dynamically  changing the status of the "is_active" button
+    def set_active(self, is_active_dynamic):
+        self.set_style(
+            text_padding = self.text_padding,
+            text_color = self.text_color,
+            btn_color = self.btn_color,
+            btn_hover = self.btn_hover,
+            #btn_pressed = self.btn_pressed,
+            is_active = is_active_dynamic
+        )
+
     def set_style(
         self,
         text_padding = 75,

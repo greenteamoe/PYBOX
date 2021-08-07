@@ -45,7 +45,7 @@ class UI_MainWindow(object):
         self.left_menu_top_frame = QFrame()
         self.left_menu_top_frame.setMinimumHeight(40)
         self.left_menu_top_frame.setObjectName("left_menu_top_frame")
-        self.left_menu_top_frame.setStyleSheet("#left_menu_top_frame { background-color: red; }")
+        #self.left_menu_top_frame.setStyleSheet("#left_menu_top_frame { background-color: red; }")
 
         # TOP FRAME LAYOUT
         self.left_menu_top_layout = QVBoxLayout(self.left_menu_top_frame)
@@ -58,21 +58,21 @@ class UI_MainWindow(object):
             icon_path = "icon_hamburger.svg"
         )
 
-        self.btn_1 = PyPushButton(
+        self.home_btn = PyPushButton(
             text = "Home page", 
             is_active = True, 
             icon_path = "icon_home.svg"
         )
 
-        self.btn_2 = PyPushButton(
+        self.widget_btn = PyPushButton(
             text = "Widgets", 
             icon_path = "icon_widgets.svg"
         )
 
         # ADD TOP BUTTONS TO LAYOUT
         self.left_menu_top_layout.addWidget(self.toggle_button)
-        self.left_menu_top_layout.addWidget(self.btn_1)
-        self.left_menu_top_layout.addWidget(self.btn_2)
+        self.left_menu_top_layout.addWidget(self.home_btn)
+        self.left_menu_top_layout.addWidget(self.widget_btn)
 
         # MENU SPACER
         self.left_menu_spacer = QSpacerItem(20,20, QSizePolicy.Minimum, QSizePolicy.Expanding)
@@ -91,7 +91,6 @@ class UI_MainWindow(object):
         self.settings_btn = PyPushButton(
             text = "Settings", 
             icon_path = "icon_settings.svg"
-
         )
 
         # ADD BOTTOM BUTTONS TO LAYOUT
@@ -100,7 +99,6 @@ class UI_MainWindow(object):
         # LABEL VERSION SAMPLE
         self.left_menu_label_version = QLabel("v1.0.0")
         self.left_menu_label_version.setAlignment(Qt.AlignCenter)
-        self.left_menu_label_version.setMaximumWidth(60)
         self.left_menu_label_version.setMinimumHeight(30)
         self.left_menu_label_version.setMaximumHeight(30)
         self.left_menu_label_version.setStyleSheet("color: #a1a1a1")
