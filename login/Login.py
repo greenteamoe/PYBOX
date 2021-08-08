@@ -52,13 +52,13 @@ class Ui_LoginWIndow(object):
 
                 # Check fields
                 if textUser + textPw != '':
-                        text = textUser + textPw
+                        text = textUser + "| " + textPw
                         show_message(text)
                         self.frame_error_popup.setStyleSheet(self.stylePopupError)
                 else:
                         text = " Login successful "
                         if self.save_credentials.isChecked():
-                                text = text + " | Credentials have been saved "
+                                text = text + " | User credentials have been saved "
                         show_message(text)
                         self.frame_error_popup.setStyleSheet(self.stylePopupOk)
 
