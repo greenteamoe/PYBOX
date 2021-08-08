@@ -36,7 +36,7 @@ class Ui_LoginWIndow(object):
 
                 # Check user
                 if not self.username.text():
-                        textUser = " User empty "
+                        textUser = " Username field is empty "
                         self.username_label.setStyleSheet(self.styleLineEditError)
                 else:
                         textUser = ""
@@ -44,7 +44,7 @@ class Ui_LoginWIndow(object):
 
                 # Check password
                 if not self.password.text():
-                        textPw = " Password empty "
+                        textPw = " Password field is empty "
                         self.password_label.setStyleSheet(self.styleLineEditError)
                 else:
                         textPw = ""
