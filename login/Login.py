@@ -51,8 +51,12 @@ class Ui_LoginWIndow(object):
                         self.password_label.setStyleSheet(self.styleLineEditOK)
 
                 # Check fields
-                if textUser + textPw != '':
-                        text = textUser + "| " + textPw
+                if textUser != '':
+                        text = textUser
+                        show_message(text)
+                        self.frame_error_popup.setStyleSheet(self.stylePopupError)
+                elif textPw != '':
+                        text = textPw
                         show_message(text)
                         self.frame_error_popup.setStyleSheet(self.stylePopupError)
                 else:
@@ -68,7 +72,7 @@ class Ui_LoginWIndow(object):
                 LoginWIndow.setMinimumSize(QtCore.QSize(500, 700))
                 LoginWIndow.setMaximumSize(QtCore.QSize(500, 700))
                 icon = QtGui.QIcon()
-                icon.addPixmap(QtGui.QPixmap(":/lock_image/images/locksvgicon.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                icon.addPixmap(QtGui.QPixmap("./images/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
                 LoginWIndow.setWindowIcon(icon)
                 LoginWIndow.setStyleSheet("background-color: rgb(27, 30, 36);")
                 self.centralwidget = QtWidgets.QWidget(LoginWIndow)
@@ -306,7 +310,7 @@ class Ui_LoginWIndow(object):
 
         def retranslateUi(self, LoginWIndow):
                 _translate = QtCore.QCoreApplication.translate
-                LoginWIndow.setWindowTitle(_translate("LoginWIndow", "Login"))
+                LoginWIndow.setWindowTitle(_translate("LoginWIndow", "PYBOX | Login"))
                 self.label_error.setText(_translate("LoginWIndow", "ERROR: Username or password not valid"))
                 self.username.setPlaceholderText(_translate("LoginWIndow", "Username"))
                 self.login_text_label.setText(_translate("LoginWIndow", "Login"))
